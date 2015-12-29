@@ -2,8 +2,11 @@
 [RatticDB](http://rattic.org/) for Docker with a Postgresql DB, Nginx and uWSGI above a small [Alpine Linux](http://alpinelinux.org/)
 
 **NOTE:**  SSL is not activated as this Docker is intended to be behind a SSL Proxy like Nginx for example.
+
 ## TODO
-  * Add LDAP configuration
+ - Add LDAP configuration
+ - Fix init DB issue
+
 ## Build
 ```shell
 docker build -t $USER/ratticdb:1.3.1 .

@@ -1,0 +1,27 @@
+[ratticweb]
+debug = false
+timezone = {{ TIMEZONE | default("Europe/Paris") }}
+secretkey = {{ SECRETKEY }}
+hostname = {{ HOSTNAME }}
+ssl_header = HTTP_X_FORWARDED_PROTOCOL
+ssl_header_value = https
+
+[filepaths]
+static = /srv/rattic/static
+
+[database]
+engine = django.db.backends.postgresql_psycopg2
+host = {{ DB_HOST }}
+port = {{ DB_PORT | default(5432) }}
+name = {{ DB_NAME | default("postgres") }}
+user = {{ DB_USER }}
+password = {{ DB_PASSWORD }}
+
+[email]
+backend = django.core.mail.backends.smtp.EmailBackend
+host = {{ MAIL_HOST }}
+port = {{ MAIL_PORT | default(587) }}
+usetls = {{ MAIL_ENABLE_TLS | default(true) }}
+user = {{ MAIL_USER }}
+password = {{ MAIL_PASSWORD }}
+from_email = {{ MAIL_FROM }}
